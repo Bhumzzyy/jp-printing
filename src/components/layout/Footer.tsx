@@ -86,9 +86,21 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>
-            © <CurrentYear /> JP PRINTING & SIGNS. All rights
-            reserved.
+          <p style={{ marginBottom: "24px" }}>
+            © <CurrentYear />{" "}
+            <Image
+              src="/jp_logo1.png"
+              alt="JP Printing & Signs"
+              width={2000}
+              height={1024}
+              style={{
+                display: "inline-block",
+                width: "54px",
+                height: "auto",
+                verticalAlign: "middle",
+              }}
+            />{" "}
+            All rights reserved.
           </p>
           <p>Made to make an impression.</p>
         </div>

@@ -5,12 +5,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { printingServices, signsServices } from "@/data/services";
+import styles from "./Navbar.module.css";
 
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services", dropdown: true },
-  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -23,11 +23,11 @@ export default function Navbar() {
   };
 
   return (
-    <header className="site-header">
-      <div className="container navbar">
+    <header className={styles.header}>
+      <div className={`container ${styles.navbar}`}>
         <Link
           href="/"
-          className="brand"
+          className={styles.brand}
           aria-label="JP Printing and Signs home"
           onClick={closeAll}
         >
@@ -36,13 +36,13 @@ export default function Navbar() {
             alt=""
             width={2000}
             height={1024}
-            className="brand__logo"
+            className={styles.logo}
             priority
           />
         </Link>
 
         <button
-          className="navbar__toggle"
+          className={styles.toggle}
           type="button"
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
@@ -52,24 +52,24 @@ export default function Navbar() {
         </button>
 
         <nav
-          className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}
+          className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`}
           aria-label="Main navigation"
         >
           {links.map((link) =>
             link.dropdown ? (
               <div
                 key={link.href}
-                className={`navbar__item navbar__item--dropdown ${
-                  servicesOpen ? "is-open" : ""
+                className={`${styles.item} ${styles.dropdown} ${
+                  servicesOpen ? styles.isOpen : ""
                 }`}
               >
-                <div className="navbar__trigger">
+                <div className={styles.trigger}>
                   <Link href={link.href} onClick={closeAll}>
                     {link.label}
                   </Link>
                   <button
                     type="button"
-                    className="navbar__caret"
+                    className={styles.caret}
                     aria-label="Toggle services menu"
                     aria-expanded={servicesOpen}
                     onClick={() => setServicesOpen((open) => !open)}
@@ -78,10 +78,10 @@ export default function Navbar() {
                   </button>
                 </div>
 
-                <div className="navbar__mega">
-                  <div className="navbar__mega-grid">
-                    <div className="navbar__mega-col">
-                      <span className="navbar__mega-title">Printing</span>
+                <div className={styles.mega}>
+                  <div className={styles.megaGrid}>
+                    <div className={styles.megaColumn}>
+                      <span className={styles.megaTitle}>Printing</span>
                       {printingServices.map((service) => (
                         <Link
                           key={service.slug}
@@ -92,8 +92,8 @@ export default function Navbar() {
                         </Link>
                       ))}
                     </div>
-                    <div className="navbar__mega-col">
-                      <span className="navbar__mega-title">Signs</span>
+                    <div className={styles.megaColumn}>
+                      <span className={styles.megaTitle}>Signs</span>
                       {signsServices.map((service) => (
                         <Link
                           key={service.slug}
@@ -104,18 +104,18 @@ export default function Navbar() {
                         </Link>
                       ))}
                     </div>
-                    <div className="navbar__mega-col navbar__mega-col--cta">
-                      <span className="navbar__mega-title">Not sure?</span>
+                    <div className={`${styles.megaColumn} ${styles.megaCta}`}>
+                      <span className={styles.megaTitle}>Not sure?</span>
                       <p>
                         Tell us what you&apos;re planning and we&apos;ll point
                         you in the right direction.
                       </p>
                       <Link
                         href="/contact"
-                        className="button button--dark"
+                        className={styles.quote}
                         onClick={closeAll}
                       >
-                        Get a Quote <ArrowUpRight size={15} />
+                        Contact Us <ArrowUpRight size={15} />
                       </Link>
                     </div>
                   </div>
@@ -130,15 +130,15 @@ export default function Navbar() {
 
           <Link
             href="/contact"
-            className="button button--dark navbar__mobile-cta"
+            className={`${styles.quote} ${styles.mobileCta}`}
             onClick={closeAll}
           >
-            Get a Quote <ArrowUpRight size={16} />
+            Contact Us <ArrowUpRight size={16} />
           </Link>
         </nav>
 
-        <Link href="/contact" className="button button--dark navbar__desktop-cta">
-          Get a Quote <ArrowUpRight size={16} />
+        <Link href="/contact" className={`${styles.quote} ${styles.desktopCta}`}>
+          Contact Us <ArrowUpRight size={16} />
         </Link>
       </div>
     </header>

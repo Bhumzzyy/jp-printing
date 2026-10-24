@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
+import { Titan_One } from "next/font/google";
 import "./globals.css";
 import "./scrollbar.css";
+
+const titanOne = Titan_One({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-titan-one",
+});
 
 export const metadata: Metadata = {
   title: "JP PRINTING & SIGNS | Printing, Signage & Custom Print",
@@ -23,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={titanOne.variable}>
       <body>{children}</body>
     </html>
   );

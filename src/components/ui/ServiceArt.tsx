@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 type ServiceArtProps = {
   variant: string;
   className?: string;
@@ -9,6 +11,10 @@ type ServiceArtProps = {
  * mark so the whole set feels like one printing-press family.
  */
 export default function ServiceArt({ variant, className }: ServiceArtProps) {
+  const id = useId().replace(/:/g, "");
+  const backgroundId = `${id}-sa-bg`;
+  const dotsId = `${id}-sa-dots`;
+
   return (
     <svg
       viewBox="0 0 400 300"
@@ -18,18 +24,18 @@ export default function ServiceArt({ variant, className }: ServiceArtProps) {
       preserveAspectRatio="xMidYMid slice"
     >
       <defs>
-        <linearGradient id="sa-bg" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={backgroundId} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#f7fbfd" />
           <stop offset="1" stopColor="#ffffff" />
         </linearGradient>
-        <pattern id="sa-dots" width="16" height="16" patternUnits="userSpaceOnUse">
+        <pattern id={dotsId} width="16" height="16" patternUnits="userSpaceOnUse">
           <circle cx="2" cy="2" r="1.3" fill="#111" opacity="0.06" />
         </pattern>
       </defs>
 
       {/* Card background */}
-      <rect width="400" height="300" fill="url(#sa-bg)" />
-      <rect width="400" height="300" fill="url(#sa-dots)" />
+      <rect width="400" height="300" fill={`url(#${backgroundId})`} />
+      <rect width="400" height="300" fill={`url(#${dotsId})`} />
       {/* Soft CMYK corner glows */}
       <circle cx="40" cy="36" r="90" fill="#00A9E0" opacity="0.06" />
       <circle cx="366" cy="30" r="70" fill="#EC008C" opacity="0.05" />

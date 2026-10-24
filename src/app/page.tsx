@@ -1,36 +1,34 @@
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
-import Hero from "@/components/home/Hero";
-import ServicesStrip from "@/components/home/ServicesStrip";
-import ServiceCategories from "@/components/home/ServiceCategories";
-import PopularServices from "@/components/home/PopularServices";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
+import HomeHero from "@/components/home/HomeHero";
+import FeaturedProducts from "@/components/home/FeaturedProducts";
+import PrintTicker from "@/components/home/PrintTicker";
+import PrintAndSigns from "@/components/home/PrintAndSigns";
+import ProductGallery from "@/components/home/ProductGallery";
+import FeaturedSignage from "@/components/home/FeaturedSignage";
 import AboutPreview from "@/components/home/AboutPreview";
 import HowItWorks from "@/components/home/HowItWorks";
-import FAQ from "@/components/home/FAQ";
-import ContactCTA from "@/components/home/ContactCTA";
+import HomeCTA from "@/components/home/HomeCTA";
 
 export default function HomePage() {
   return (
-    <>
-      <AnnouncementBar />
-      <Navbar />
+    <main className="home-page">
+      <HomeHero />
 
-      <main>
-        <Hero />
-        <ServicesStrip />
-        <ServiceCategories />
-        <PopularServices />
-        <WhyChooseUs />
-        <AboutPreview />
-        <HowItWorks />
-        <FAQ />
-        <ContactCTA />
-      </main>
+      <FeaturedProducts />
 
-      <Footer />
-    </>
+      <PrintTicker />
+
+      <PrintAndSigns />
+
+      <ProductGallery />
+
+      <FeaturedSignage />
+
+      <AboutPreview />
+
+      <HowItWorks />
+
+      <HomeCTA />
+    </main>
   );
 }

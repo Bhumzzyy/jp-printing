@@ -1,0 +1,164 @@
+.homeHero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 36px;
+  max-width: 1440px;
+  min-height: 690px;
+  margin: auto;
+  padding: 80px 7%;
+  overflow: hidden;
+  background: #171717;
+  color: #fff;
+}
+
+.eyebrow {
+  color: #00b9d6;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.title {
+  margin: 28px 0;
+  font-size: clamp(48px, 6.5vw, 94px);
+  line-height: 0.91;
+  letter-spacing: -5px;
+  font-weight: 900;
+}
+
+.title span {
+  color: #00b9d6;
+}
+
+.description {
+  max-width: 420px;
+  color: #bdbdbd;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.actions a {
+  padding: 15px 22px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.actions a:first-child {
+  background: #fff;
+  color: #171717;
+}
+
+.actions a:hover {
+  background: #00b9d6;
+  border-color: #00b9d6;
+  color: #171717;
+}
+
+.note {
+  display: block;
+  margin-top: 55px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #999;
+}
+
+.visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+
+.image {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 40px #0005);
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+.orb {
+  position: absolute;
+  width: 270px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.4;
+}
+
+.orbCyan {
+  top: 5%;
+  left: 5%;
+  background: #00b9d6;
+}
+
+.orbPink {
+  right: 0;
+  bottom: 0;
+  background: #e5007d;
+}
+
+.sticker {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 15%;
+  padding: 16px 22px;
+  background: #f5d800;
+  color: #171717;
+  font-size: 12px;
+  font-weight: 900;
+  transform: rotate(-8deg);
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .homeHero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 25px;
+    padding: 65px 24px 35px;
+  }
+
+  .title {
+    font-size: clamp(49px, 12vw, 76px);
+    letter-spacing: -3px;
+  }
+
+  .image {
+    max-height: 350px;
+  }
+
+  .note {
+    margin-top: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    animation: none;
+  }
+}
