@@ -1,0 +1,127 @@
+.section {
+  padding: clamp(74px, 9vw, 116px) 0;
+  background: #fff;
+  color: #171717;
+}
+
+.heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.heading > div > span {
+  color: #707070;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.heading h2 {
+  margin: 16px 0 0;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(42px, 6vw, 75px);
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.heading h2 em {
+  color: #00a9c4;
+  font-style: normal;
+}
+
+.allLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #171717;
+  font-size: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.allLink:hover { color: #e5007d; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 16px;
+}
+
+.card {
+  position: relative;
+  display: block;
+  min-height: 330px;
+  overflow: hidden;
+  border: 1px dashed #171717;
+  background: #f4f4f1;
+  color: #171717;
+  text-decoration: none;
+}
+
+.card::after {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgb(0 0 0 / 72%));
+  content: "";
+}
+
+.art {
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  transition: transform 500ms ease;
+}
+
+.card:hover .art { transform: scale(1.04); }
+
+.cardCopy {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  left: 26px;
+  color: #fff;
+}
+
+.cardCopy > span {
+  font-size: 8px;
+  letter-spacing: 0.16em;
+}
+
+.cardCopy h3 {
+  margin: 8px 0 0;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 1;
+  right: 22px;
+  bottom: 23px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f5d800;
+  color: #171717;
+  transition: transform 180ms ease;
+}
+
+.card:hover .arrow { transform: rotate(45deg); }
+
+@media (max-width: 650px) {
+  .heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .grid { grid-template-columns: 1fr; }
+  .card, .art { min-height: 280px; }
+}

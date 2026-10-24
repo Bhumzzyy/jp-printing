@@ -1,22 +1,25 @@
 .header {
   position: relative;
   z-index: 20;
-  background: transparent;
+  background: #fff;
   color: #171717;
+  border-bottom: 1px solid #eaeaea;
 }
 
 .navbar {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   min-height: 68px;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .brand {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
+  justify-self: start;
 }
 
 .logo {
@@ -31,10 +34,9 @@
 .links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: clamp(16px, 2.5vw, 32px);
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  justify-self: center;
 }
 
 .links > a,
@@ -139,10 +141,10 @@
   justify-content: center;
   gap: 10px;
   padding: 8px 14px;
-  border: 1px solid currentColor;
-  border-radius: 0;
-  background: transparent;
-  color: inherit;
+  border: 1px solid #e5007d;
+  border-radius: 999px;
+  background: #e5007d;
+  color: #fff;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -152,16 +154,22 @@
 }
 
 .quote:hover {
-  border-color: #00a9c4;
-  color: #00869b;
+  border-color: #00b9d6;
+  background: #00b9d6;
+  color: #171717;
 }
 
 .mobileCta {
   display: none;
 }
 
+.desktopCta {
+  justify-self: end;
+}
+
 @media (max-width: 760px) {
   .navbar {
+    display: flex;
     min-height: 62px;
     gap: 14px;
   }
@@ -193,9 +201,11 @@
     align-items: stretch;
     flex-direction: column;
     gap: 18px;
-    padding: 18px 0 22px;
-    border-bottom: 1px dashed #17171770;
-    background: transparent;
+    padding: 18px 22px 22px;
+    border: 1px solid #eaeaea;
+    border-top: 0;
+    background: #fff;
+    box-shadow: 0 16px 28px rgb(23 23 23 / 10%);
     transform: none;
   }
 

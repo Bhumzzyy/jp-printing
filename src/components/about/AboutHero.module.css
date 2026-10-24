@@ -1,0 +1,246 @@
+.hero {
+  overflow: hidden;
+  padding: clamp(60px, 8vw, 112px) 0 42px;
+  background: #f7f7f4;
+  color: #171717;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.95fr);
+  align-items: center;
+  gap: clamp(38px, 7vw, 96px);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #626262;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.eyebrow svg {
+  color: #e5007d;
+}
+
+.copy h1 {
+  margin: 22px 0 20px;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(54px, 7vw, 92px);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.91;
+}
+
+.copy h1 span {
+  color: #e5007d;
+}
+
+.copy > p {
+  max-width: 475px;
+  margin: 0;
+  color: #696969;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 27px;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 20px;
+  border: 1px dashed #171717;
+  border-radius: 999px;
+  font-size: 11px;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.primary {
+  background: #171717;
+  color: #fff;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  border-color: #00b9d6;
+  background: #00b9d6;
+  color: #171717;
+}
+
+.secondary {
+  background: transparent;
+  color: #171717;
+}
+
+.secondary:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+.scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(40px, 6vw, 78px);
+  color: #707070;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-decoration: none;
+}
+
+.scroll svg {
+  color: #e5007d;
+}
+
+.visual {
+  position: relative;
+  min-height: 490px;
+  isolation: isolate;
+}
+
+.artBackplate {
+  position: absolute;
+  z-index: -1;
+  inset: 9% 4% 6% 12%;
+  background: #f5d800;
+  transform: rotate(4deg);
+}
+
+.artMain {
+  position: absolute;
+  top: 8%;
+  right: 3%;
+  width: 78%;
+  aspect-ratio: 1.14;
+  overflow: hidden;
+  border: 2px dashed #fff;
+  box-shadow: 0 20px 50px rgb(23 23 23 / 15%);
+  transform: rotate(2deg);
+}
+
+.art {
+  width: 100%;
+  height: 100%;
+}
+
+.artSmall {
+  position: absolute;
+  z-index: 2;
+  width: 38%;
+  aspect-ratio: 1.25;
+  overflow: hidden;
+  border: 2px dashed #fff;
+  background: white;
+  box-shadow: 0 12px 28px rgb(23 23 23 / 17%);
+}
+
+.artSmall span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 8px 6px;
+  background: #171717;
+  color: #fff;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.artSmallTop {
+  top: 0;
+  left: 0;
+  transform: rotate(-8deg);
+}
+
+.artSmallBottom {
+  right: 0;
+  bottom: 7%;
+  transform: rotate(6deg);
+}
+
+.sticker {
+  position: absolute;
+  z-index: 3;
+  top: 44%;
+  left: 0;
+  display: grid;
+  width: 92px;
+  height: 92px;
+  place-content: center;
+  border: 2px dashed #171717;
+  border-radius: 50%;
+  background: #00b9d6;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-align: center;
+  transform: rotate(-12deg);
+}
+
+.colorDots {
+  position: absolute;
+  right: 14%;
+  bottom: 0;
+  display: flex;
+  gap: 7px;
+}
+
+.colorDots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00b9d6;
+}
+
+.colorDots i:nth-child(2) { background: #e5007d; }
+.colorDots i:nth-child(3) { background: #f5d800; }
+.colorDots i:nth-child(4) { background: #171717; }
+
+@media (max-width: 850px) {
+  .inner {
+    grid-template-columns: 1fr 0.9fr;
+    gap: 28px;
+  }
+
+  .visual { min-height: 400px; }
+}
+
+@media (max-width: 650px) {
+  .hero { padding-top: 58px; }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .copy h1 { font-size: clamp(54px, 14vw, 78px); }
+  .scroll { margin-top: 32px; }
+  .visual { width: min(100%, 490px); min-height: 390px; margin: 0 auto; }
+}
+
+@media (max-width: 400px) {
+  .visual { min-height: 310px; }
+  .sticker { width: 72px; height: 72px; font-size: 10px; }
+  .artSmall { border-width: 4px; }
+}

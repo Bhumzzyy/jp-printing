@@ -10,7 +10,6 @@ import {
   Sparkles,
   Tag,
 } from "lucide-react";
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ServiceArt from "@/components/ui/ServiceArt";
@@ -48,7 +47,6 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   return (
     <>
-      <AnnouncementBar />
       <Navbar />
 
       <main className="service-detail">

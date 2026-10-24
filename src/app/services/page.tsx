@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AnnouncementBar from "@/components/layout/AnnouncementBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ServicesCatalog from "@/components/services/ServicesCatalog";
@@ -14,10 +13,9 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <AnnouncementBar />
       <Navbar />
 
-      <main>
+      <main className="services-page">
         <section className="page-hero">
           <div className="container page-hero__inner">
             <span className="eyebrow">

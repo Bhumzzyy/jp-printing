@@ -1,0 +1,112 @@
+.section {
+  padding: clamp(76px, 9vw, 120px) 0;
+  background: #fff;
+  color: #171717;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.65fr);
+  align-items: end;
+  gap: clamp(32px, 6vw, 78px);
+}
+
+.heading > span {
+  color: #707070;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  line-height: 1.7;
+}
+
+.heading h2 {
+  margin: 20px 0 0;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(45px, 6vw, 78px);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+}
+
+.heading h2 em {
+  color: #e5007d;
+  font-style: normal;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  min-height: 255px;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px dashed #171717;
+  color: #171717;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 6px 6px 0 #171717;
+}
+
+.cyan { background: #8de2eb; }
+.pink { background: #f4b8d6; }
+.yellow { background: #f5d800; }
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardTop > span {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.card h3 {
+  margin: 28px 0 9px;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+.card p {
+  margin: 0;
+  color: #333;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+.cardLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 850px) {
+  .inner {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 28px;
+  }
+
+  .heading h2 br { display: none; }
+}
+
+@media (max-width: 620px) {
+  .cards { grid-template-columns: 1fr; }
+  .card { min-height: 215px; }
+}

@@ -32,7 +32,7 @@ export default function Navbar() {
           onClick={closeAll}
         >
           <Image
-            src="/jp_logo1.png"
+            src="/jp_logo.png"
             alt=""
             width={2000}
             height={1024}

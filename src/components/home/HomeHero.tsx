@@ -1,5 +1,4 @@
 
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -7,14 +6,12 @@ import {
   Box,
   Building2,
   CreditCard,
-  ChevronDown,
   Layers3,
   Printer,
   Sparkles,
   Sticker,
 } from "lucide-react";
 import ServiceArt from "@/components/ui/ServiceArt";
-import { printingServices, signsServices } from "@/data/services";
 
 const products = [
   { name: "Business Cards", type: "PRINT ESSENTIALS", icon: CreditCard, color: "cyan" },
@@ -27,54 +24,6 @@ export default function HomeHero() {
   return (
     <section className="jh-section">
       <div className="jh-shell">
-        <div className="jh-topline">
-          <Link href="/" className="jh-brand">
-            <Image
-              src="/jp_logo1.png"
-              alt="JP Printing & Signs"
-              width={2000}
-              height={1024}
-              className="jh-brand-logo"
-              priority
-            />
-          </Link>
-
-          <nav className="jh-nav" aria-label="Main navigation">
-            <Link className="jh-nav-active" href="/">Home</Link>
-            <details className="jh-service-dropdown">
-              <summary>
-                Services <ChevronDown size={13} />
-              </summary>
-              <div className="jh-service-menu">
-                <Link className="jh-all-services" href="/services">All services</Link>
-                <div className="jh-service-menu-columns">
-                  <div>
-                    <span>Printing</span>
-                    {printingServices.map((service) => (
-                      <Link key={service.slug} href={`/services/${service.slug}`}>
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                  <div>
-                    <span>Signs</span>
-                    {signsServices.map((service) => (
-                      <Link key={service.slug} href={`/services/${service.slug}`}>
-                        {service.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </details>
-            <Link href="/about">About</Link>
-          </nav>
-
-          <Link href="/contact" className="jh-top-cta">
-            CONTACT US <span><ArrowUpRight size={14} /></span>
-          </Link>
-        </div>
-
         <div className="jh-main">
           <div className="jh-copy">
             <div className="jh-eyebrow">
@@ -119,6 +68,9 @@ export default function HomeHero() {
           </div>
 
           <div className="jh-showcase">
+            <Link href="/contact" className="jh-top-cta">
+              CONTACT US <span><ArrowUpRight size={14} /></span>
+            </Link>
             <div className="jh-cover-visual" aria-label="Custom printing and signage artwork">
               <ServiceArt variant="exterior" className="jh-cover-art" />
               <div className="jh-cover-shade" />
@@ -218,158 +170,33 @@ export default function HomeHero() {
           --jh-yellow: #f5d800;
           background: #fff;
           color: var(--jh-ink);
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: var(--font-poppins), sans-serif;
         }
 
         .jh-shell {
+          --jh-content-inset: clamp(24px, 5vw, 72px);
           position: relative;
           padding: 0 6.5%;
           background: var(--jh-ink);
           color: #fff;
         }
 
-        .jh-topline {
-          position: relative;
-          z-index: 5;
-          min-height: 68px;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          gap: 18px;
-          border-bottom: 1px solid #ffffff25;
-        }
-
-        .jh-brand {
-          display: flex;
-          align-items: center;
-          flex: 0 0 auto;
-          text-decoration: none;
-        }
-
-        .jh-brand-logo {
-          display: block;
-          width: 116px;
-          height: auto;
-          border-radius: 0;
-        }
-
-        .jh-nav {
-          position: absolute;
-          left: 50%;
-          display: flex;
-          align-items: center;
-          gap: clamp(12px, 2vw, 28px);
-          transform: translateX(-50%);
-        }
-
-        .jh-nav a {
-          padding: 10px 0;
-          color: #c7c7c7;
-          text-decoration: none;
-          font-size: 12px;
-          transition: background 0.2s ease, color 0.2s ease;
-        }
-
-        .jh-service-dropdown {
-          position: relative;
-        }
-
-        .jh-service-dropdown summary {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          padding: 10px 0;
-          color: #c7c7c7;
-          cursor: pointer;
-          font-size: 12px;
-          list-style: none;
-        }
-
-        .jh-service-dropdown summary::-webkit-details-marker {
-          display: none;
-        }
-
-        .jh-service-dropdown:hover summary,
-        .jh-service-dropdown[open] summary,
-        .jh-service-dropdown:focus-within summary {
-          color: #fff;
-        }
-
-        .jh-service-menu {
-          position: absolute;
-          top: calc(100% + 10px);
-          left: 50%;
-          display: none;
-          width: min(500px, 80vw);
-          max-height: min(65vh, 520px);
-          padding: 18px;
-          overflow-y: auto;
-          border: 1px solid #ffffff45;
-          background: #171717;
-          box-shadow: 0 16px 40px #0008;
-          transform: translateX(-50%);
-        }
-
-        .jh-service-dropdown[open] .jh-service-menu,
-        .jh-service-dropdown:hover .jh-service-menu,
-        .jh-service-dropdown:focus-within .jh-service-menu {
-          display: block;
-        }
-
-        .jh-service-menu a {
-          display: block;
-          padding: 5px 0;
-          color: #d0d0d0;
-          font-size: 11px;
-          line-height: 1.4;
-          text-decoration: none;
-        }
-
-        .jh-service-menu a:hover,
-        .jh-service-menu a:focus-visible {
-          color: var(--jh-cyan);
-        }
-
-        .jh-service-menu .jh-all-services {
-          margin-bottom: 12px;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #ffffff30;
-          color: #fff;
-          font-weight: 700;
-        }
-
-        .jh-service-menu-columns {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 20px;
-        }
-
-        .jh-service-menu-columns > div > span {
-          display: block;
-          margin-bottom: 6px;
-          color: var(--jh-yellow);
-          font-size: 10px;
-          font-weight: 700;
-          letter-spacing: 1px;
-          text-transform: uppercase;
-        }
-
-        .jh-nav a:hover,
-        .jh-nav .jh-nav-active {
-          color: #fff;
-        }
-
         .jh-top-cta {
+          position: absolute;
+          top: 17px;
+          right: clamp(20px, 6.5%, 72px);
+          z-index: 5;
           display: inline-flex;
           align-items: center;
           gap: 9px;
-          margin-left: auto;
           padding: 8px 12px;
-          border: 1px solid #ffffff80;
+          border: 1px solid var(--jh-cyan);
           border-radius: 0;
-          color: white;
+          background: var(--jh-cyan);
+          color: var(--jh-ink);
           text-decoration: none;
           font-size: 10px;
+          font-weight: 800;
           letter-spacing: 1px;
         }
 
@@ -378,14 +205,15 @@ export default function HomeHero() {
           width: 30px;
           height: 30px;
           place-items: center;
-          border: 1px solid #ffffff80;
+          border: 1px solid #17171750;
           border-radius: 0;
-          background: transparent;
-          color: var(--jh-cyan);
+          background: #ffffff50;
+          color: var(--jh-ink);
         }
 
         .jh-top-cta:hover {
-          border-color: var(--jh-cyan);
+          border-color: #fff;
+          background: #fff;
         }
 
         .jh-main {
@@ -393,7 +221,7 @@ export default function HomeHero() {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           align-items: stretch;
-          min-height: clamp(560px, calc(100vh - 82px), 820px);
+          min-height: clamp(560px, calc(100svh - 68px), 832px);
           margin-inline: -6.95%;
         }
 
@@ -404,8 +232,7 @@ export default function HomeHero() {
           flex-direction: column;
           justify-content: center;
           min-width: 0;
-          padding: 52px clamp(20px, 3vw, 40px) 112px
-            clamp(24px, 5vw, 72px);
+          padding: 72px clamp(20px, 3vw, 40px) 72px var(--jh-content-inset);
         }
 
         .jh-eyebrow {
@@ -844,12 +671,13 @@ export default function HomeHero() {
 
         @media (max-width: 900px) {
           .jh-shell {
+            --jh-content-inset: 5%;
             padding-inline: 4%;
           }
 
           .jh-main {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            min-height: 620px;
+            min-height: max(560px, calc(100svh - 68px));
             margin-inline: -4.17%;
           }
 
@@ -858,7 +686,7 @@ export default function HomeHero() {
           }
 
           .jh-copy {
-            padding-left: 5%;
+            padding-top: 120px;
           }
 
           .jh-copy h1 {
@@ -894,24 +722,13 @@ export default function HomeHero() {
         /* Mobile */
 
         @media (max-width: 650px) {
-          .jh-topline {
-            min-height: 62px;
-          }
-
-          .jh-brand-logo {
-            width: 96px;
-          }
-
-          .jh-nav {
-            gap: 10px;
-          }
-
-          .jh-nav a {
-            padding: 9px 0;
-            font-size: 10px;
+          .jh-shell {
+            --jh-content-inset: 24px;
           }
 
           .jh-top-cta {
+            top: 14px;
+            right: 14px;
             gap: 5px;
             padding: 6px 8px;
             font-size: 8px;
@@ -931,7 +748,7 @@ export default function HomeHero() {
 
           .jh-copy {
             min-height: 510px;
-            padding: 52px 24px 112px;
+            padding: 100px 24px 112px;
           }
 
           .jh-copy h1 {
@@ -992,15 +809,6 @@ export default function HomeHero() {
         }
 
         @media (max-width: 370px) {
-          .jh-brand-logo {
-            width: 78px;
-          }
-
-          .jh-nav a {
-            padding-inline: 0;
-            font-size: 7px;
-          }
-
           .jh-top-cta {
             gap: 4px;
             font-size: 7px;
@@ -1016,18 +824,6 @@ export default function HomeHero() {
         }
 
         @media (max-width: 440px) {
-          .jh-topline {
-            gap: 7px;
-          }
-
-          .jh-nav {
-            gap: 7px;
-          }
-
-          .jh-nav a {
-            font-size: 8px;
-          }
-
           .jh-top-cta {
             font-size: 0;
             padding: 5px;

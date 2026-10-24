@@ -15,7 +15,7 @@ export default function PrintTicker() {
       <style>{`
         .pt-section { overflow: hidden; padding: 25px 0; background: #171717; color: #fff; }
         .pt-track { display: flex; width: max-content; animation: pt-scroll 28s linear infinite; }
-        .pt-phrase { flex-shrink: 0; padding-right: 40px; font-family: var(--font-titan-one), sans-serif; font-size: clamp(27px, 4vw, 52px); font-weight: 400; letter-spacing: -.5px; white-space: nowrap; }
+        .pt-phrase { flex-shrink: 0; padding-right: 40px; font-family: var(--font-montserrat), sans-serif; font-size: clamp(27px, 4vw, 52px); font-weight: 900; letter-spacing: -.5px; white-space: nowrap; }
         .pt-print-initial { color: #00b9d6; }
         .pt-brand-initial { color: #e5007d; }
         .pt-make-initial { color: #f5d800; }

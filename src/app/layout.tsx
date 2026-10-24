@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Titan_One } from "next/font/google";
+import { Montserrat, Poppins } from "next/font/google";
+import RouteScrollReset from "@/components/layout/RouteScrollReset";
 import "./globals.css";
 import "./scrollbar.css";
+import "./services.css";
 
-const titanOne = Titan_One({
-  weight: "400",
+const montserrat = Montserrat({
+  weight: "900",
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-titan-one",
+  variable: "--font-montserrat",
+});
+
+const poppins = Poppins({
+  weight: "800",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -31,8 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={titanOne.variable}>
-      <body>{children}</body>
+    <html lang="en" className={`${montserrat.variable} ${poppins.variable}`}>
+      <body>
+        <RouteScrollReset />
+        {children}
+      </body>
     </html>
   );
 }

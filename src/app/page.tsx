@@ -7,28 +7,31 @@ import ProductGallery from "@/components/home/ProductGallery";
 import FeaturedSignage from "@/components/home/FeaturedSignage";
 import AboutPreview from "@/components/home/AboutPreview";
 import HowItWorks from "@/components/home/HowItWorks";
-import HomeCTA from "@/components/home/HomeCTA";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 export default function HomePage() {
   return (
-    <main className="home-page">
-      <HomeHero />
+    <>
+      <Navbar />
+      <main className="home-page">
+        <HomeHero />
 
-      <FeaturedProducts />
+        <FeaturedProducts />
 
-      <PrintTicker />
+        <PrintTicker />
 
-      <PrintAndSigns />
+        <PrintAndSigns />
 
-      <ProductGallery />
+        <ProductGallery />
 
-      <FeaturedSignage />
+        <FeaturedSignage />
 
-      <AboutPreview />
+        <AboutPreview />
 
-      <HowItWorks />
-
-      <HomeCTA />
-    </main>
+        <HowItWorks />
+      </main>
+      <Footer />
+    </>
   );
 }
