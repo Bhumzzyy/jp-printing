@@ -70,7 +70,7 @@
   background:
     radial-gradient(#17171712 0.7px, transparent 0.7px) 0 0 / 13px 13px,
     #f7f7f4;
-  box-shadow: 9px 9px 0 #00b9d6;
+  box-shadow: 9px 9px 0 #171717;
 }
 
 .formHeading {
@@ -226,5 +226,5 @@
 
 @media (max-width: 500px) {
   .row { grid-template-columns: 1fr; }
-  .formCard { padding: 22px 17px; box-shadow: 5px 5px 0 #00b9d6; }
+  .formCard { padding: 22px 17px; box-shadow: 5px 5px 0 #171717; }
 }

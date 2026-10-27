@@ -3,23 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
-import { printingServices, signsServices } from "@/data/services";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import styles from "./Navbar.module.css";
 
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services", dropdown: true },
+  { label: "Printing", href: "/services#printing" },
+  { label: "Signs", href: "/services#signs" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
 
   const closeAll = () => {
     setMenuOpen(false);
-    setServicesOpen(false);
   };
 
   return (
@@ -34,8 +32,8 @@ export default function Navbar() {
           <Image
             src="/jp_logo.png"
             alt=""
-            width={2000}
-            height={1024}
+            width={3000}
+            height={2000}
             className={styles.logo}
             priority
           />
@@ -55,78 +53,11 @@ export default function Navbar() {
           className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`}
           aria-label="Main navigation"
         >
-          {links.map((link) =>
-            link.dropdown ? (
-              <div
-                key={link.href}
-                className={`${styles.item} ${styles.dropdown} ${
-                  servicesOpen ? styles.isOpen : ""
-                }`}
-              >
-                <div className={styles.trigger}>
-                  <Link href={link.href} onClick={closeAll}>
-                    {link.label}
-                  </Link>
-                  <button
-                    type="button"
-                    className={styles.caret}
-                    aria-label="Toggle services menu"
-                    aria-expanded={servicesOpen}
-                    onClick={() => setServicesOpen((open) => !open)}
-                  >
-                    <ChevronDown size={15} />
-                  </button>
-                </div>
-
-                <div className={styles.mega}>
-                  <div className={styles.megaGrid}>
-                    <div className={styles.megaColumn}>
-                      <span className={styles.megaTitle}>Printing</span>
-                      {printingServices.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={`/services/${service.slug}`}
-                          onClick={closeAll}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                    <div className={styles.megaColumn}>
-                      <span className={styles.megaTitle}>Signs</span>
-                      {signsServices.map((service) => (
-                        <Link
-                          key={service.slug}
-                          href={`/services/${service.slug}`}
-                          onClick={closeAll}
-                        >
-                          {service.title}
-                        </Link>
-                      ))}
-                    </div>
-                    <div className={`${styles.megaColumn} ${styles.megaCta}`}>
-                      <span className={styles.megaTitle}>Not sure?</span>
-                      <p>
-                        Tell us what you&apos;re planning and we&apos;ll point
-                        you in the right direction.
-                      </p>
-                      <Link
-                        href="/contact"
-                        className={styles.quote}
-                        onClick={closeAll}
-                      >
-                        Contact Us <ArrowUpRight size={15} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link key={link.href} href={link.href} onClick={closeAll}>
-                {link.label}
-              </Link>
-            )
-          )}
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} onClick={closeAll}>
+              {link.label}
+            </Link>
+          ))}
 
           <Link
             href="/contact"

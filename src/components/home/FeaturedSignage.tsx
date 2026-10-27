@@ -1,29 +1,33 @@
-
+import Image from "next/image";
 import Link from "next/link";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 export default function FeaturedSignage() {
   return (
     <section className="fs-section">
-      <ImagePlaceholder
-        className="fs-image"
-        label="Custom branded storefront signage"
-        imagePath="/images/featured-storefront-sign.jpg"
-        artVariant="exterior"
-      />
+      <div className="fs-background">
+        <Image
+          src="/hero/bg.png"
+          alt="Custom branded storefront signage"
+          fill
+          priority={false}
+          sizes="100vw"
+          className="fs-background-image"
+        />
+      </div>
 
       <div className="fs-content">
-        <span>SIGNS THAT SHOW UP</span>
         <h2>
           YOUR <span className="fs-cyan">BRAND.</span>
           <br />
           OUT IN THE <span className="fs-pink">WORLD.</span>
         </h2>
-        <p>From storefronts to windows and walls, make every space say something.</p>
+
+        <p>
+          From storefronts to windows and walls, make every space say something.
+        </p>
+
         <Link href="/services">EXPLORE SIGNAGE ↗</Link>
       </div>
-
-      <span className="fs-index">JP / 02</span>
 
       <style>{`
         .fs-section {
@@ -32,17 +36,28 @@ export default function FeaturedSignage() {
           overflow: hidden;
           background: #171717;
           color: white;
+          isolation: isolate;
           view-timeline-name: --fs-parallax;
           view-timeline-axis: block;
         }
 
-        .fs-image {
+        /* Background image */
+
+        .fs-background {
           position: absolute;
-          inset: -12% 0;
-          min-height: 0;
-          border: 0;
+          z-index: 0;
+          inset: -18% 0;
+          overflow: hidden;
           will-change: transform;
         }
+
+        .fs-background-image {
+          object-fit: cover;
+          object-position: center;
+          transform: scale(1.12);
+        }
+
+        /* Dark overlay */
 
         .fs-section::after {
           content: "";
@@ -51,13 +66,15 @@ export default function FeaturedSignage() {
           inset: 0;
           background: linear-gradient(
             90deg,
-            #101010f5 0%,
-            #171717d9 42%,
-            #17171765 76%,
-            #17171720 100%
+            #101010eF 0%,
+            #171717c9 38%,
+            #17171770 70%,
+            #17171730 100%
           );
           pointer-events: none;
         }
+
+        /* Content */
 
         .fs-content {
           position: relative;
@@ -66,23 +83,11 @@ export default function FeaturedSignage() {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          max-width: 100%;
           min-height: 620px;
           padding: 90px 24px;
           margin: 0 auto;
           text-align: center;
           text-shadow: 0 2px 18px #0009;
-        }
-
-        .fs-content > span {
-          display: inline-block;
-          padding: 10px 14px;
-          border: 1px solid #f5d800;
-          background: #171717cf;
-          color: #f5d800;
-          font-size: 11px;
-          font-weight: 800;
-          letter-spacing: 2.5px;
         }
 
         .fs-content h2 {
@@ -128,7 +133,10 @@ export default function FeaturedSignage() {
           font-weight: 900;
           letter-spacing: .7px;
           text-shadow: none;
-          transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+          transition:
+            transform .2s ease,
+            background-color .2s ease,
+            box-shadow .2s ease;
         }
 
         .fs-content a:hover {
@@ -137,10 +145,10 @@ export default function FeaturedSignage() {
           box-shadow: 0 12px 30px #000a;
         }
 
-        /* Background parallax */
+        /* Scroll-based image parallax */
 
         @supports (animation-timeline: view()) {
-          .fs-image > svg {
+          .fs-background {
             animation: fs-parallax linear both;
             animation-timeline: --fs-parallax;
             animation-range: entry 0% exit 100%;
@@ -148,16 +156,17 @@ export default function FeaturedSignage() {
 
           @keyframes fs-parallax {
             from {
-              transform: translateY(-14%) scale(1.12);
+              transform: translateY(-12%);
             }
+
             to {
-              transform: translateY(14%) scale(1.12);
+              transform: translateY(12%);
             }
           }
         }
 
-        @media(prefers-reduced-motion: reduce) {
-          .fs-image > svg {
+        @media (prefers-reduced-motion: reduce) {
+          .fs-background {
             animation: none !important;
           }
 
@@ -166,18 +175,13 @@ export default function FeaturedSignage() {
           }
         }
 
-        .fs-index {
-          position: absolute;
-          z-index: 3;
-          right: 30px;
-          bottom: 25px;
-          font-size: 11px;
-          letter-spacing: 2px;
-        }
-
-        @media(max-width: 700px) {
+        @media (max-width: 700px) {
           .fs-section {
             min-height: 520px;
+          }
+
+          .fs-background {
+            inset: -10% 0;
           }
 
           .fs-content {

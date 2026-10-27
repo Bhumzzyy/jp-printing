@@ -26,10 +26,10 @@ export default function HomePage() {
         <ProductGallery />
 
         <FeaturedSignage />
-
+<HowItWorks />
         <AboutPreview />
 
-        <HowItWorks />
+        
       </main>
       <Footer />
     </>

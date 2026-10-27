@@ -1,16 +1,16 @@
 
+import Image from "next/image";
 import Link from "next/link";
-import ImagePlaceholder from "@/components/ui/ImagePlaceholder";
 
 const gallery = [
-  { title: "Calendars", slug: "calendars", image: "/images/calendars.jpg", artVariant: "calendar", style: "pg-tall" },
-  { title: "Take-out Menus", slug: "take-out-laminated-menus", image: "/images/menus.jpg", artVariant: "menu" },
-  { title: "Presentation Folders", slug: "presentation-folders", image: "/images/folders.jpg", artVariant: "folder" },
-  { title: "Custom Banners", slug: "custom-banners", image: "/images/custom-banners.jpg", artVariant: "banner", style: "pg-wide" },
-  { title: "Event Tickets", slug: "event-tickets-bookmarks", image: "/images/tickets.jpg", artVariant: "ticket" },
-  { title: "Invitation Cards", slug: "greeting-invitation-cards", image: "/images/invitations.jpg", artVariant: "card" },
-  { title: "Lawn Signs", slug: "lawn-signs-feather-flags", image: "/images/lawn-signs.jpg", artVariant: "lawn-sign" },
-  { title: "Window Graphics", slug: "window-graphics", image: "/images/window-graphics.jpg", artVariant: "window", style: "pg-wide-last" },
+  { title: "Calendars", slug: "calendars", image: "/print/calender.png", style: "pg-tall" },
+  { title: "Take-out Menus", slug: "take-out-laminated-menus", image: "/print/menu.png" },
+  { title: "Presentation Folders", slug: "presentation-folders", image: "/print/folder.png" },
+  { title: "Custom Banners", slug: "custom-banners", image: "/hero/custome-banner.png", style: "pg-wide" },
+  { title: "Event Tickets", slug: "event-tickets-bookmarks", image: "/print/tickets.png" },
+  { title: "Invitation Cards", slug: "greeting-invitation-cards", image: "/print/invites.png" },
+  { title: "Lawn Signs", slug: "lawn-signs-feather-flags", image: "/print/boards.png" },
+  { title: "Window Graphics", slug: "window-graphics", image: "/hero/window-graphics.png", style: "pg-wide-last" },
 ];
 
 export default function ProductGallery() {
@@ -27,11 +27,12 @@ export default function ProductGallery() {
       <div className="pg-grid">
         {gallery.map((item) => (
           <Link href={`/services/${item.slug}`} className={`pg-item ${item.style ?? ""}`} key={item.slug}>
-            <ImagePlaceholder
-              className="pg-placeholder"
-              label={item.title}
-              imagePath={item.image}
-              artVariant={item.artVariant}
+            <Image
+              src={item.image}
+              alt={item.title}
+              fill
+              sizes="(max-width: 760px) 50vw, 25vw"
+              className="pg-image"
             />
             <div className="pg-label"><span>{item.title}</span><span>↗</span></div>
           </Link>
@@ -46,8 +47,8 @@ export default function ProductGallery() {
         .pg-heading > a { color: #171717; text-decoration: none; border-bottom: 1px solid; padding-bottom: 7px; font-size: 11px; }
         .pg-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 210px; grid-auto-flow: dense; gap: 14px; }
         .pg-item { position: relative; display: block; min-width: 0; overflow: hidden; background: #f2f2f2; color: #171717; text-decoration: none; }
-        .pg-placeholder { min-height: 0; transition: transform .6s ease; }
-        .pg-item:hover .pg-placeholder { transform: scale(1.04); }
+        .pg-image { object-fit: cover; transition: transform .6s ease; }
+        .pg-item:hover .pg-image { transform: scale(1.04); }
         .pg-tall { grid-row: span 2; }
         .pg-wide { grid-column: span 2; }
         .pg-wide-last { grid-column: span 3; }

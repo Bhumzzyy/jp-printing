@@ -37,6 +37,7 @@ export type Service = {
   tagline: string;
   description: string;
   art: string;
+  image: string;
   icon: LucideIcon;
   popular?: boolean;
   features: string[];
@@ -55,6 +56,7 @@ export const services: Service[] = [
     description:
       "Custom printed calendars put your business in front of customers every single day of the year. Choose from wall calendars, desk calendars and calendar cards, all printed on heavy stock and available with wire-o binding, saddle stitching or a simple hang hole. Add your logo, contact details, key dates and imagery for a practical promotional piece people actually keep.",
     art: "calendar",
+    image: "/print/calender.png",
     icon: Calendar,
     popular: true,
     features: [
@@ -87,6 +89,7 @@ export const services: Service[] = [
     description:
       "Flyers, brochures and post cards are the most cost-effective way to spread the word about your business, event or special offer. From single-panel flyers to tri-fold brochures and folded post cards, we print on a range of stocks with optional lamination. Ideal for door-to-door campaigns, in-store handouts, direct mail and trade shows.",
     art: "flyers",
+    image: "/print/brochure.png",
     icon: Inbox,
     popular: true,
     features: [
@@ -119,6 +122,7 @@ export const services: Service[] = [
     description:
       "Showcase your food and prices with menus designed to last. We print take-out menus on sturdy stock and laminate them for wipe-clean durability, making them perfect for high-traffic restaurants, cafes and catering. Available in single or multi-page formats with custom sizing to fit your brand and your table tops.",
     art: "menu",
+    image: "/print/menu.png",
     icon: Utensils,
     popular: true,
     features: [
@@ -151,6 +155,7 @@ export const services: Service[] = [
     description:
       "Lawn signs and feather flags are a fast, affordable way to capture roadside attention. Printed on corrugated plastic (coroplast) with ground stakes for lawn use, or as tall feather and teardrop flags for events and storefronts. Weather-resistant and reusable, they are a favourite for real estate, elections, sales and grand openings.",
     art: "lawn-sign",
+    image: "/print/boards.png",
     icon: Signpost,
     popular: true,
     features: [
@@ -183,6 +188,7 @@ export const services: Service[] = [
     description:
       "A professional business card is still one of the strongest networking tools you can carry. We print business cards on a wide range of premium stocks including matte, silk, soft-touch, linen and metallic finishes, with optional spot UV and rounded corners. Complete your identity with matching letterhead, compliment slips and notecards.",
     art: "business-cards",
+    image: "/print/cards.png",
     icon: CreditCard,
     popular: true,
     features: [
@@ -215,6 +221,7 @@ export const services: Service[] = [
     description:
       "From product labels to promotional decals, stickers are a small but mighty branding tool. We produce die-cut stickers, roll labels, sheet labels and static-cling labels on paper, vinyl and clear materials with gloss or matte finishes. Waterproof vinyl options make them suitable for outdoor and product use.",
     art: "stickers",
+    image: "/print/label.png",
     icon: Sticker,
     popular: true,
     features: [
@@ -247,6 +254,7 @@ export const services: Service[] = [
     description:
       "Presentation folders keep documents organised while putting your brand front and centre. Perfect for proposals, kits, portfolios and trade-show handouts, our folders are printed on heavy card stock with optional business-card slits, gloss or matte lamination and custom die-cut shapes to make a polished impression.",
     art: "folder",
+    image: "/print/folder.png",
     icon: FolderOpen,
     features: [
       "Two-pocket folders with optional card slits",
@@ -278,6 +286,7 @@ export const services: Service[] = [
     description:
       "NCR (carbonless) forms are essential for invoices, receipts, delivery notes, order pads and log sheets — producing duplicate copies without carbon paper. We print multi-part NCR sets in 2, 3 or 4 colours, bound into pads or loose sets. Complement them with printed envelopes in a range of sizes and window styles.",
     art: "ncr",
+    image: "/print/invoice.png",
     icon: Mail,
     features: [
       "2, 3 and 4-part carbonless sets",
@@ -309,6 +318,7 @@ export const services: Service[] = [
     description:
       "Event tickets do more than grant entry — they set the tone for your event and double as a keepsake. We print tickets on durable stock with numbering, perforations and stub options. Bookmarks are a charming, low-cost promotional item for libraries, schools, authors and businesses alike.",
     art: "ticket",
+    image: "/print/tickets.png",
     icon: Ticket,
     features: [
       "Numbered & barcoded tickets",
@@ -340,6 +350,7 @@ export const services: Service[] = [
     description:
       "Booklets let you say more — catalogues, programmes, manuals and lookbooks all benefit from a professionally bound format. We offer saddle-stitched and perfect-bound booklets on a variety of stocks. Notepads make practical branded giveaways, bound with a glued top edge for clean tear-off pages.",
     art: "booklet",
+    image: "/print/diary.png",
     icon: BookOpen,
     features: [
       "Saddle-stitched & perfect binding",
@@ -371,6 +382,7 @@ export const services: Service[] = [
     description:
       "Door hangers put your message directly into the hands of residents, making them perfect for local services, deliveries and promotions. Car magnets turn your vehicle into a moving billboard — a flexible alternative to a full wrap. Both are printed on durable, weather-resistant materials for indoor and outdoor use.",
     art: "door-hanger",
+    image: "/print/doorholder.png",
     icon: DoorOpen,
     features: [
       "Custom die-cut door hanger shapes",
@@ -402,6 +414,7 @@ export const services: Service[] = [
     description:
       "From seasonal greetings to wedding and party invitations, beautifully printed cards leave a lasting impression. We print folded and flat cards on premium stocks with envelopes, offering foil accents, embossing and custom shapes to make every invitation feel special — whether for personal celebrations or corporate holiday mailings.",
     art: "card",
+    image: "/print/invites.png",
     icon: Heart,
     features: [
       "Folded, flat and die-cut card formats",
@@ -435,6 +448,7 @@ export const services: Service[] = [
     description:
       "Window graphics transform plain glass into powerful advertising and privacy. Choose from frosted etched-vinyl for a premium look, one-way vision perforated vinyl that lets you see out while displaying graphics inside, or full-colour window wraps. Ideal for storefronts, offices and restaurants wanting instant impact.",
     art: "window",
+    image: "/sign/window.png",
     icon: Store,
     popular: true,
     features: [
@@ -467,6 +481,7 @@ export const services: Service[] = [
     description:
       "Wall graphics and murals turn empty walls into immersive brand experiences. Printed on durable, removable adhesive vinyl or fabric, murals can cover a single accent wall or an entire room. Perfect for offices, restaurants, retail stores and homes looking to add colour, personality and impact to their space.",
     art: "wall",
+    image: "/sign/wall.png",
     icon: PanelTop,
     popular: true,
     features: [
@@ -499,6 +514,7 @@ export const services: Service[] = [
     description:
       "Vinyl lettering is cut from solid-colour vinyl — not printed — giving you razor-sharp text and logos in any colour, including metallic and translucent options. It adheres to windows, walls, doors, vehicles and most smooth surfaces, and is a cost-effective way to add business names, hours and messaging with a clean, painted-on appearance.",
     art: "lettering",
+    image: "/sign/lttering.png",
     icon: Type,
     features: [
       "Cut-vinyl text, logos & graphics",
@@ -530,6 +546,7 @@ export const services: Service[] = [
     description:
       "Custom banners deliver maximum visibility for events, sales and grand openings. Printed on durable vinyl or fabric with hemming and eyelets, our banners are built to withstand indoor and outdoor use. Retractable and roll-up options make them easy to transport and set up for trade shows and presentations.",
     art: "banner",
+    image: "/sign/banner.png",
     icon: Flag,
     popular: true,
     features: [
@@ -562,6 +579,7 @@ export const services: Service[] = [
     description:
       "Need something specific? Custom signs are designed and fabricated to your exact requirements — from small indoor plaques to large exterior boards. We work with coroplast, PVC, foam board, aluminium composite and more, with printed, cut-out and illuminated options to suit indoor and outdoor environments.",
     art: "sign",
+    image: "/sign/sign.png",
     icon: PanelTop,
     popular: true,
     features: [
@@ -594,6 +612,7 @@ export const services: Service[] = [
     description:
       "Exterior signage is your business's first impression from the street. We fabricate weather-resistant storefront signs, fascia boards, panel signs, A-frames and pylons built to endure sun, rain and snow. Durable materials and UV-stable inks ensure your signage stays sharp and professional year after year.",
     art: "exterior",
+    image: "/sign/signage.png",
     icon: Building2,
     features: [
       "Storefront, fascia & panel signs",
@@ -625,6 +644,7 @@ export const services: Service[] = [
     description:
       "Interior decor signs combine style with function — reception logos, office nameplates, menu boards and decorative panels that reinforce your brand the moment people walk in. From sleek acrylic and metal finishes to warm wood and dimensional lettering, we craft pieces that make your interior feel considered and professional.",
     art: "interior",
+    image: "/sign/decore.png",
     icon: Lightbulb,
     features: [
       "Reception & lobby logo signs",
@@ -656,6 +676,7 @@ export const services: Service[] = [
     description:
       "Pop up displays and portable banner stands are made for life on the move. Lightweight frames with fabric or vinyl graphics pack down into carry cases for effortless transport — perfect for trade shows, markets, presentations and events. Set up in minutes without tools for a professional backdrop anywhere you go.",
     art: "popup",
+    image: "/sign/popup.png",
     icon: Monitor,
     features: [
       "Fabric & vinyl pop-up displays",
@@ -687,6 +708,7 @@ export const services: Service[] = [
     description:
       "LED displays and light box signs keep your brand glowing around the clock. Backlit acrylic panels, LED letter boxes and digital-ready display frames deliver bright, even illumination that stands out after dark. Energy-efficient LED technology keeps running costs low while maximising visibility and curb appeal.",
     art: "led",
+    image: "/sign/led.png",
     icon: Sun,
     features: [
       "Backlit LED light box signs",
@@ -718,6 +740,7 @@ export const services: Service[] = [
     description:
       "Channel letters are individual three-dimensional letters — the gold standard for professional storefront signage. Each letter is fabricated from aluminium with an acrylic face and can be front-lit, halo-lit or non-illuminated. They deliver a bold, high-end look that makes your business name unmistakable from a distance.",
     art: "channel",
+    image: "/sign/channel.png",
     icon: Type,
     features: [
       "3D fabricated aluminium letters",
@@ -749,6 +772,7 @@ export const services: Service[] = [
     description:
       "PVC and acrylic signs offer a clean, contemporary look suitable for both indoor and outdoor use. Acrylic provides a glossy, glass-like finish with standoff mounts for a floating effect, while PVC is lightweight, rigid and cost-effective. Both are perfect for office signs, directories, plaques and branded displays.",
     art: "acrylic",
+    image: "/sign/pvc.png",
     icon: PanelTop,
     features: [
       "Glossy, glass-like acrylic panels",
@@ -780,6 +804,7 @@ export const services: Service[] = [
     description:
       "Vehicle decals and wraps turn cars, vans and trucks into mobile billboards seen by thousands of people every day. Choose full wraps for complete transformation, partial wraps for targeted branding, or simple door decals and magnets. Printed on premium cast vinyl with a protective laminate for a durable, professional finish.",
     art: "vehicle",
+    image: "/sign/vehicle.png",
     icon: Car,
     popular: true,
     features: [

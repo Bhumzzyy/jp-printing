@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ServiceCard from "@/components/ui/ServiceCard";
 import {
   categories,
@@ -14,6 +14,22 @@ const filters: Filter[] = ["All", ...categories];
 
 export default function ServicesCatalog() {
   const [active, setActive] = useState<Filter>("All");
+
+  useEffect(() => {
+    const syncFilterFromHash = () => {
+      const hash = window.location.hash.slice(1).toLowerCase();
+      const category = categories.find(
+        (category) => category.toLowerCase() === hash
+      );
+      if (category) {
+        setActive(category);
+      }
+    };
+
+    syncFilterFromHash();
+    window.addEventListener("hashchange", syncFilterFromHash);
+    return () => window.removeEventListener("hashchange", syncFilterFromHash);
+  }, []);
 
   const counts = useMemo(() => {
     const map: Record<string, number> = { All: services.length };
@@ -36,6 +52,7 @@ export default function ServicesCatalog() {
             {filters.map((filter) => (
               <button
                 key={filter}
+                id={filter === "All" ? undefined : filter.toLowerCase()}
                 type="button"
                 role="tab"
                 aria-selected={active === filter}

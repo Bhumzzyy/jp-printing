@@ -21,6 +21,14 @@ export default function Footer() {
         <Link href="/contact">GET A QUOTE ↗</Link>
       </div>
 
+      <div className="hc-credit">
+        <p>
+          Developed by <span className="hc-cyan">THE</span>{" "}
+          <span className="hc-pink">THREE</span>{" "}
+          <span className="hc-yellow">LAYERS</span>
+        </p>
+      </div>
+
       <style>{`
         .hc-section { overflow: hidden; padding: 50px 7% 0; background: #171717; color: white; }
         .hc-top, .hc-bottom { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
@@ -34,6 +42,9 @@ export default function Footer() {
         .hc-bottom { padding-bottom: 35px; border-bottom: 1px solid #444; }
         .hc-bottom p { color: #bbb; font-size: 13px; }
         .hc-bottom a { padding: 14px 20px; border-radius: 40px; background: #00b9d6; color: #171717; font-size: 11px; font-weight: 800; text-decoration: none; }
+        .hc-credit { padding: 18px 0; text-align: right; }
+        .hc-credit p { margin: 0; color: #bbb; font-size: 11px; letter-spacing: 1px; }
+        .hc-credit span { font-weight: 800; }
         .hc-wordmark { margin: -25px 0 -9%; text-align: center; font-size: clamp(200px, 37vw, 540px); line-height: .85; letter-spacing: -.07em; font-weight: 900; user-select: none; }
         @media(max-width: 600px) { .hc-section { padding: 35px 22px 0; } .hc-section h2 { margin: 80px 0 40px; letter-spacing: -.035em; } .hc-top, .hc-bottom { align-items: flex-start; flex-direction: column; } .hc-wordmark { font-size: 48vw; } }
       `}</style>

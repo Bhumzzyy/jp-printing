@@ -10,9 +10,9 @@ import {
   Sparkles,
   Tag,
 } from "lucide-react";
+import Image from "next/image";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ServiceArt from "@/components/ui/ServiceArt";
 import ServiceCard from "@/components/ui/ServiceCard";
 import {
   getServiceBySlug,
@@ -87,7 +87,13 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
 
             <div className="detail-hero__art">
-              <ServiceArt variant={service.art} className="detail-art" />
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                sizes="(max-width: 720px) 100vw, 50vw"
+                className="detail-art"
+              />
             </div>
           </div>
         </section>

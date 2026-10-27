@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import ServiceArt from "@/components/ui/ServiceArt";
 import type { Service } from "@/data/services";
 
 type ServiceCardProps = {
@@ -9,25 +9,24 @@ type ServiceCardProps = {
 };
 
 export default function ServiceCard({ service, index = 0 }: ServiceCardProps) {
-  const Icon = service.icon;
-
   return (
     <article
       className="service-card"
       style={{ animationDelay: `${index * 55}ms` }}
     >
       <Link href={`/services/${service.slug}`} className="service-card__art">
-        <ServiceArt variant={service.art} />
-        <span className="service-card__cat">{service.category}</span>
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          sizes="(max-width: 480px) 100vw, (max-width: 720px) 50vw, (max-width: 1100px) 33vw, 25vw"
+        />
         <span className="service-card__arrow" aria-hidden="true">
           <ArrowUpRight size={19} />
         </span>
       </Link>
 
       <div className="service-card__body">
-        <span className="service-card__icon" aria-hidden="true">
-          <Icon size={18} />
-        </span>
         <h3>
           <Link href={`/services/${service.slug}`}>{service.title}</Link>
         </h3>

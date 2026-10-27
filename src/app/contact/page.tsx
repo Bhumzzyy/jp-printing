@@ -18,8 +18,9 @@ export default function ContactPage() {
       <Navbar />
       <main>
         <ContactHero />
-        <ContactMethods />
         <ContactFaq />
+        <ContactMethods />
+        
         <ContactInquiry />
       </main>
       <Footer />

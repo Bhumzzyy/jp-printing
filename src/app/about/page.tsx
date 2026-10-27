@@ -21,8 +21,8 @@ export default function AboutPage() {
         <AboutHero />
         <AboutRange />
         <AboutDifference />
+                <AboutShowcase />
         <AboutApproach />
-        <AboutShowcase />
       </main>
       <Footer />
     </>

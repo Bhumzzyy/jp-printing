@@ -1,20 +1,21 @@
+
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import ServiceArt from "@/components/ui/ServiceArt";
 import styles from "./AboutShowcase.module.css";
 
 const work = [
   {
     label: "PRINT THAT INTRODUCES YOU",
     title: "Brand essentials",
-    variant: "business-cards",
-    href: "/services/business-cards-stationery",
+    image: "/hero/about-banner1.png",
+    href: "/services?category=printing",
     className: "cards",
   },
   {
     label: "MAKE YOUR SPACE SPEAK",
     title: "Signs & graphics",
-    variant: "exterior",
+    image: "/hero/about-banner2.png",
     href: "/services/exterior-signage",
     className: "signs",
   },
@@ -33,10 +34,12 @@ export default function AboutShowcase() {
               <em>MEMORABLE.</em>
             </h2>
           </div>
+
           <Link href="/services" className={styles.allLink}>
             See all services <ArrowUpRight size={16} />
           </Link>
         </div>
+
         <div className={styles.grid}>
           {work.map((item) => (
             <Link
@@ -44,11 +47,19 @@ export default function AboutShowcase() {
               className={`${styles.card} ${styles[item.className]}`}
               key={item.title}
             >
-              <ServiceArt variant={item.variant} className={styles.art} />
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                sizes="(max-width: 700px) 100vw, 50vw"
+                className={styles.art}
+              />
+
               <div className={styles.cardCopy}>
                 <span>{item.label}</span>
                 <h3>{item.title}</h3>
               </div>
+
               <span className={styles.arrow} aria-hidden="true">
                 <ArrowUpRight size={20} />
               </span>
