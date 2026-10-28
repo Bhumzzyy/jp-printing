@@ -19,6 +19,14 @@
 			"service": "web-jp-printing"
 		}
 	],
+	"r2_buckets": [
+		{
+			// Use R2 incremental cache
+			// see https://opennext.js.org/cloudflare/caching
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			"bucket_name": "web-jp-printing-cache"
+		}
+	],
 	"images": {
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
