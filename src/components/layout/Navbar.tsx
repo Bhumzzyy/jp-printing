@@ -31,10 +31,11 @@ export default function Navbar() {
         >
           <Image
             src="/jp_logo.png"
-            alt=""
-            width={3000}
-            height={2000}
+            alt="JP Printing & Signs"
+            width={180}
+            height={60}
             className={styles.logo}
+            style={{ objectFit: "contain" }}
             priority
           />
         </Link>

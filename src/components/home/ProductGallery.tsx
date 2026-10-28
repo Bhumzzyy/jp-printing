@@ -53,7 +53,20 @@ export default function ProductGallery() {
         .pg-wide { grid-column: span 2; }
         .pg-wide-last { grid-column: span 3; }
         .pg-label { position: absolute; bottom: 9px; left: 9px; right: 9px; display: flex; align-items: center; justify-content: space-between; padding: 13px; background: #fff; font-size: 13px; }
-        @media(max-width: 760px) { .pg-section { padding: 70px 22px; } .pg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 165px; gap: 10px; } .pg-wide-last { grid-column: span 2; } .pg-heading { align-items: start; flex-direction: column; } .pg-heading h2 { letter-spacing: -1px; } }
+        @media(max-width: 760px) { 
+          .pg-section { padding: 65px 20px; } 
+          .pg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 160px; gap: 10px; } 
+          .pg-wide-last { grid-column: span 2; } 
+          .pg-heading { align-items: start; flex-direction: column; gap: 12px; margin-bottom: 28px; } 
+          .pg-heading h2 { font-size: clamp(30px, 8.5vw, 44px); letter-spacing: -1px; } 
+          .pg-label { padding: 9px 11px; font-size: 12px; }
+        }
+        @media(max-width: 360px) {
+          .pg-section { padding: 50px 14px; }
+          .pg-grid { grid-auto-rows: 140px; gap: 8px; }
+          .pg-label { padding: 7px 8px; font-size: 11px; }
+          .pg-heading h2 { font-size: 28px; }
+        }
       `}</style>
     </section>
   );

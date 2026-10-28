@@ -218,6 +218,7 @@ export default function HomeHero() {
           background: #fff;
           color: #171717;
           font-family: var(--font-poppins), sans-serif;
+          overflow-x: clip;
         }
 
         .jh-shell {
@@ -225,6 +226,7 @@ export default function HomeHero() {
           padding: 0 6.5%;
           background: var(--jh-ink);
           color: #fff;
+          overflow-x: clip;
         }
 
         /* MAIN HERO */
@@ -666,54 +668,71 @@ export default function HomeHero() {
         /* MOBILE */
 
         @media (max-width: 650px) {
+          .jh-shell {
+            padding-inline: 0;
+            overflow-x: clip;
+          }
+
           .jh-main {
             grid-template-columns: 1fr;
             min-height: 0;
-            margin-inline: -4.17%;
+            margin-inline: 0;
             padding-bottom: 0;
           }
 
           .jh-copy {
-            min-height: 510px;
-            padding: 65px 24px 90px;
+            order: 1;
+            min-height: auto;
+            padding: 55px 22px 42px;
           }
 
           .jh-copy h1 {
-            font-size: clamp(48px, 12.5vw, 76px);
+            font-size: clamp(38px, 11vw, 68px);
+            overflow-wrap: break-word;
+            word-break: break-word;
           }
 
           .jh-description {
             max-width: 360px;
             font-size: 13px;
+            margin: 22px 0 0;
           }
 
           .jh-showcase {
-            min-height: 440px;
+            order: 3;
+            min-height: 380px;
           }
 
           .jh-image-thumbnails {
-            top: 510px;
-            left: 50%;
+            order: 2;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin: -24px auto -24px;
+            z-index: 10;
+            width: fit-content;
+            max-width: calc(100% - 24px);
             gap: 6px;
-            padding: 7px;
+            padding: 6px;
           }
 
           .jh-thumbnail {
-            width: min(24vw, 96px);
+            width: min(27vw, 92px);
             padding: 3px;
           }
 
           .jh-thumbnail-image {
-            height: 58px;
+            height: 54px;
           }
 
           .jh-products {
-            padding: 48px 20px 55px;
+            padding: 48px 18px 55px;
           }
 
           .jh-products-heading h2 {
-            font-size: clamp(30px, 8vw, 43px);
-            letter-spacing: -2px;
+            font-size: clamp(28px, 7.5vw, 42px);
+            letter-spacing: -1.5px;
           }
 
           .jh-products-heading > a {
@@ -722,25 +741,55 @@ export default function HomeHero() {
 
           .jh-product-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px 12px;
+            gap: 16px 10px;
+          }
+
+          .jh-product-card {
+            min-width: 0;
           }
 
           .jh-product-visual {
-            min-height: 175px;
+            min-height: 160px;
           }
         }
 
         @media (max-width: 370px) {
-          .jh-copy h1 {
-            font-size: 44px;
+          .jh-copy {
+            padding: 45px 16px 36px;
           }
 
-          .jh-product-visual {
-            min-height: 145px;
+          .jh-copy h1 {
+            font-size: clamp(32px, 10vw, 38px);
+          }
+
+          .jh-showcase {
+            min-height: 320px;
+          }
+
+          .jh-image-thumbnails {
+            margin: -20px auto -20px;
+            padding: 5px;
+            gap: 4px;
           }
 
           .jh-thumbnail {
             width: 27vw;
+          }
+
+          .jh-thumbnail-image {
+            height: 48px;
+          }
+
+          .jh-product-visual {
+            min-height: 135px;
+          }
+
+          .jh-products {
+            padding: 40px 14px 45px;
+          }
+
+          .jh-products-heading h2 {
+            font-size: 26px;
           }
         }
 

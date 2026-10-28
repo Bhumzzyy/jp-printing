@@ -35,7 +35,18 @@ export default function HowItWorks() {
         .hiw-card:nth-child(3) .hiw-number { color: #9b8700; }
         .hiw-card h3 { margin: 22px 0 10px; font-size: 19px; }
         .hiw-card p { max-width: 270px; color: #707070; font-size: 14px; line-height: 1.8; }
-        @media(max-width: 700px) { .hiw-section { padding: 70px 22px; } .hiw-grid { grid-template-columns: 1fr; } .hiw-card, .hiw-card + .hiw-card { padding: 22px 0; border-left: 0; border-bottom: 1px solid #d8d8d8; } .hiw-heading h2 { letter-spacing: -1px; } }
+        @media(max-width: 700px) { 
+          .hiw-section { padding: 60px 20px; } 
+          .hiw-heading h2 { font-size: clamp(34px, 8.5vw, 55px); margin: 14px 0 32px; letter-spacing: -1px; }
+          .hiw-grid { grid-template-columns: 1fr; } 
+          .hiw-card, .hiw-card + .hiw-card { padding: 20px 0; border-left: 0; border-bottom: 1px solid #d8d8d8; } 
+          .hiw-number { font-size: 32px; }
+          .hiw-card h3 { margin: 14px 0 8px; font-size: 18px; }
+        }
+        @media(max-width: 360px) {
+          .hiw-section { padding: 45px 14px; }
+          .hiw-heading h2 { font-size: 30px; }
+        }
       `}</style>
     </section>
   );

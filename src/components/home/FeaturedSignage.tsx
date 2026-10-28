@@ -177,7 +177,7 @@ export default function FeaturedSignage() {
 
         @media (max-width: 700px) {
           .fs-section {
-            min-height: 520px;
+            min-height: 480px;
           }
 
           .fs-background {
@@ -185,12 +185,31 @@ export default function FeaturedSignage() {
           }
 
           .fs-content {
-            min-height: 520px;
-            padding: 75px 24px;
+            min-height: 480px;
+            padding: 60px 20px;
           }
 
           .fs-content h2 {
+            font-size: clamp(34px, 8.5vw, 60px);
             letter-spacing: -1px;
+            margin: 18px 0;
+          }
+
+          .fs-content p {
+            font-size: 14px;
+            max-width: 320px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .fs-section,
+          .fs-content {
+            min-height: 420px;
+            padding: 50px 14px;
+          }
+
+          .fs-content h2 {
+            font-size: 30px;
           }
         }
       `}</style>

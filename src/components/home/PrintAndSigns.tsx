@@ -152,7 +152,7 @@ export default function PrintAndSigns() {
 
         @media (max-width: 700px) {
           .ps-section {
-            padding: 70px 22px;
+            padding: 65px 20px;
           }
 
           .ps-grid {
@@ -161,11 +161,53 @@ export default function PrintAndSigns() {
           }
 
           .ps-card {
-            height: 360px;
+            height: 340px;
           }
 
           .ps-heading h2 {
+            font-size: clamp(36px, 9vw, 60px);
             letter-spacing: -1px;
+            margin: 14px 0 28px;
+          }
+
+          .ps-content {
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+          }
+
+          .ps-content h3 {
+            font-size: clamp(38px, 9vw, 56px);
+          }
+        }
+
+        @media (max-width: 360px) {
+          .ps-section {
+            padding: 50px 14px;
+          }
+
+          .ps-card {
+            height: 300px;
+          }
+
+          .ps-heading h2 {
+            font-size: 32px;
+          }
+
+          .ps-content {
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+          }
+
+          .ps-content h3 {
+            font-size: 34px;
+          }
+
+          .ps-arrow {
+            width: 38px;
+            height: 38px;
+            font-size: 20px;
           }
         }
       `}</style>

@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  z-index: 20;
+  z-index: 50;
   background:
     radial-gradient(ellipse at 12% 100%, rgb(0 174 239 / 18%), transparent 38%),
     radial-gradient(ellipse at 52% 0%, rgb(236 0 140 / 12%), transparent 34%),
@@ -14,7 +14,7 @@
 .navbar {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: auto 1fr auto;
   min-height: 68px;
   align-items: center;
   gap: 24px;
@@ -25,12 +25,17 @@
   flex: 0 0 auto;
   align-items: center;
   justify-self: start;
+  max-height: 56px;
+  overflow: hidden;
 }
 
 .logo {
-  width: 200px;
-  height: 100px;
-  margin: 5px;
+  width: auto;
+  max-width: 175px;
+  height: 48px;
+  max-height: 48px;
+  object-fit: contain;
+  display: block;
 }
 
 .toggle {
@@ -92,27 +97,43 @@
   justify-self: end;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
+  .header {
+    min-height: 62px;
+  }
+
   .navbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     min-height: 62px;
-    gap: 14px;
+    height: 62px;
+    gap: 12px;
+  }
+
+  .brand {
+    max-height: 44px;
+    max-width: 140px;
+    flex: 0 1 auto;
   }
 
   .logo {
-    width: 128px;
-    height: auto;
+    width: auto;
+    max-width: 125px;
+    height: 38px;
+    max-height: 38px;
+    object-fit: contain;
   }
 
   .toggle {
     display: inline-grid;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     flex: 0 0 auto;
     place-items: center;
     margin-left: auto;
     border: 1px dashed currentColor;
-    border-radius: 0;
+    border-radius: 4px;
     background: transparent;
     color: inherit;
     cursor: pointer;
@@ -127,7 +148,7 @@
     align-items: stretch;
     flex-direction: column;
     gap: 18px;
-    padding: 18px 22px 22px;
+    padding: 20px 22px 24px;
     border: 1px solid #eaeaea;
     border-top: 0;
     background:
@@ -137,6 +158,9 @@
       radial-gradient(ellipse at 100% 0%, rgb(23 23 23 / 6%), transparent 34%),
       #f7f7f4;
     box-shadow: 0 16px 28px rgb(23 23 23 / 10%);
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    z-index: 100;
     transform: none;
   }
 
@@ -145,7 +169,8 @@
   }
 
   .links > a {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 700;
   }
 
   .mobileCta {
@@ -155,5 +180,28 @@
 
   .desktopCta {
     display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    min-height: 56px;
+    height: 56px;
+    gap: 8px;
+  }
+
+  .brand {
+    max-width: 115px;
+  }
+
+  .logo {
+    max-width: 105px;
+    height: 32px;
+    max-height: 32px;
+  }
+
+  .toggle {
+    width: 36px;
+    height: 36px;
   }
 }

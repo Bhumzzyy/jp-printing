@@ -121,16 +121,41 @@ export default function AboutPreview() {
         @media(max-width: 760px) {
           .ap-section {
             grid-template-columns: 1fr;
-            gap: 35px;
-            padding: 70px 22px;
+            gap: 30px;
+            padding: 60px 20px;
           }
 
           .ap-image {
-            aspect-ratio: 1;
+            aspect-ratio: 1.1;
           }
 
           .ap-copy h2 {
+            font-size: clamp(32px, 8.5vw, 50px);
             letter-spacing: -1px;
+            margin: 16px 0;
+          }
+
+          .ap-copy p {
+            font-size: 13px;
+            line-height: 1.7;
+          }
+
+          .ap-image > span {
+            left: 10px;
+            bottom: 10px;
+            padding: 8px 10px;
+            font-size: 8px;
+          }
+        }
+
+        @media(max-width: 360px) {
+          .ap-section {
+            padding: 45px 14px;
+            gap: 24px;
+          }
+
+          .ap-copy h2 {
+            font-size: 28px;
           }
         }
 

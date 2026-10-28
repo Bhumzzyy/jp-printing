@@ -55,7 +55,26 @@ export default function Footer() {
         .hc-credit a { color: inherit; text-decoration: none; }
         .hc-credit span { font-weight: 800; }
         .hc-wordmark { margin: -25px 0 -9%; text-align: center; font-size: clamp(200px, 37vw, 540px); line-height: .85; letter-spacing: -.07em; font-weight: 900; user-select: none; }
-        @media(max-width: 600px) { .hc-section { padding: 35px 22px 0; } .hc-section h2 { margin: 80px 0 40px; letter-spacing: -.035em; } .hc-top, .hc-bottom { align-items: flex-start; flex-direction: column; } .hc-wordmark { font-size: 48vw; } }
+        @media(max-width: 600px) { 
+          .hc-section { padding: 40px 20px 0; } 
+          .hc-section h2 { 
+            margin: 60px 0 35px; 
+            font-size: clamp(34px, 9vw, 68px);
+            line-height: .95;
+            letter-spacing: -.035em; 
+          } 
+          .hc-top, .hc-bottom { 
+            align-items: flex-start; 
+            flex-direction: column; 
+            gap: 12px;
+          } 
+          .hc-wordmark { font-size: 48vw; } 
+          .hc-credit { text-align: center; }
+        }
+        @media(max-width: 360px) {
+          .hc-section { padding: 30px 14px 0; }
+          .hc-section h2 { font-size: 30px; margin: 45px 0 25px; }
+        }
       `}</style>
     </section>
   );

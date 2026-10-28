@@ -179,22 +179,63 @@ export default function FeaturedProducts() {
           }
         }
 
-        @media(max-width: 420px) {
+        @media(max-width: 480px) {
+          .fp-section {
+            padding: 60px 18px;
+          }
+
           .fp-heading {
             align-items: start;
             flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
           }
 
           .fp-heading h2 {
+            font-size: clamp(30px, 8.5vw, 44px);
             letter-spacing: -1px;
           }
 
+          .fp-grid {
+            gap: 10px;
+          }
+
+          .fp-number {
+            top: 10px;
+            left: 10px;
+            padding: 6px 9px;
+            font-size: 10px;
+          }
+
           .fp-label {
-            padding: 10px;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+            padding: 8px 10px;
+            gap: 6px;
           }
 
           .fp-label h3 {
             font-size: 12px;
+            word-break: break-word;
+          }
+
+          .fp-label > span {
+            font-size: 16px;
+          }
+        }
+
+        @media(max-width: 360px) {
+          .fp-section {
+            padding: 50px 14px;
+          }
+
+          .fp-grid {
+            gap: 8px;
+          }
+
+          .fp-label h3 {
+            font-size: 11px;
           }
         }
       `}</style>
