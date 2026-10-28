@@ -1,11 +1,6 @@
-import type { NextConfig } from "next";
+﻿import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  images: {
-    unoptimized: true,
-  },
-  trailingSlash: true,
   turbopack: {
     rules: {
       "*.css": {
@@ -17,3 +12,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
