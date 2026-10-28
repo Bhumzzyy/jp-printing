@@ -699,12 +699,12 @@ export default function HomeHero() {
           }
 
           .jh-thumbnail {
-            width: min(29vw, 118px);
+            width: min(24vw, 96px);
             padding: 3px;
           }
 
           .jh-thumbnail-image {
-            height: 64px;
+            height: 58px;
           }
 
           .jh-products {
