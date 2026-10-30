@@ -2,24 +2,18 @@
 
 import { useEffect, useMemo, useState } from "react";
 import ServiceCard from "@/components/ui/ServiceCard";
-import {
-  categories,
-  services,
-  type ServiceCategory,
-} from "@/data/services";
-
-type Filter = "All" | ServiceCategory;
-
-const filters: Filter[] = ["All", ...categories];
+import { categories, services, type Service } from "@/data/services";
 
 export default function ServicesCatalog() {
-  const [active, setActive] = useState<Filter>("All");
+  const [active, setActive] = useState<string>("All");
+
+  const filters = ["All", ...categories];
 
   useEffect(() => {
     const syncFilterFromHash = () => {
       const hash = window.location.hash.slice(1).toLowerCase();
       const category = categories.find(
-        (category) => category.toLowerCase() === hash
+        (cat) => cat.toLowerCase() === hash
       );
       if (category) {
         setActive(category);
@@ -61,19 +55,14 @@ export default function ServicesCatalog() {
                 }`}
                 onClick={() => setActive(filter)}
               >
-                {filter}
-                <span className="catalog-filter__count">{counts[filter]}</span>
+                <span>{filter}</span>
+                <span className="catalog-filter__count">{counts[filter] || 0}</span>
               </button>
             ))}
           </div>
-
-          <p className="catalog-result">
-            Showing <strong>{visible.length}</strong>{" "}
-            {visible.length === 1 ? "service" : "services"}
-          </p>
         </div>
 
-        <div className="service-grid">
+        <div className="services-grid" role="tabpanel">
           {visible.map((service, index) => (
             <ServiceCard key={service.slug} service={service} index={index} />
           ))}

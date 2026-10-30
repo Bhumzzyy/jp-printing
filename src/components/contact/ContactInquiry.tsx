@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowUpRight, Mail, Phone, Send } from "lucide-react";
-import { printingServices, signsServices } from "@/data/services";
+import { Mail, Phone, Send } from "lucide-react";
+import { printingServices, signsServices, type Service } from "@/data/services";
 import styles from "./ContactInquiry.module.css";
 
 export default function ContactInquiry() {
@@ -68,25 +68,20 @@ export default function ContactInquiry() {
                 filled in. Send the email to complete your enquiry.
               </p>
               <button type="button" onClick={() => setSubmitted(false)}>
-                Send another enquiry <ArrowUpRight size={15} />
+                Send another enquiry
               </button>
             </div>
           ) : (
-            <>
-              <div className={styles.formHeading}>
-                <span>PROJECT ENQUIRY / JP-01</span>
-                <h3>Tell us about it.</h3>
-                <p>Fields marked with * are required.</p>
-              </div>
-              <form className={styles.form} onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form}>
+              <div className={styles.fields}>
                 <div className={styles.row}>
                   <label>
                     Your name *
-                    <input type="text" name="name" placeholder="Name" autoComplete="name" required />
+                    <input type="text" name="name" required placeholder="Jane Doe" autoComplete="name" />
                   </label>
                   <label>
                     Email address *
-                    <input type="email" name="email" placeholder="you@example.com" autoComplete="email" required />
+                    <input type="email" name="email" required placeholder="jane@example.com" autoComplete="email" />
                   </label>
                 </div>
                 <div className={styles.row}>
@@ -99,12 +94,12 @@ export default function ContactInquiry() {
                     <select name="service" defaultValue="" required>
                       <option value="" disabled>Select a service</option>
                       <optgroup label="Printing">
-                        {printingServices.map((service) => (
+                        {printingServices.map((service: Service) => (
                           <option key={service.slug} value={service.title}>{service.title}</option>
                         ))}
                       </optgroup>
                       <optgroup label="Signs">
-                        {signsServices.map((service) => (
+                        {signsServices.map((service: Service) => (
                           <option key={service.slug} value={service.title}>{service.title}</option>
                         ))}
                       </optgroup>
@@ -114,25 +109,19 @@ export default function ContactInquiry() {
                 </div>
                 <label>
                   Estimated quantity
-                  <input type="text" name="quantity" placeholder="e.g. 500 business cards" />
+                  <input type="text" name="quantity" placeholder="e.g. 500, 1000, 1 vehicle wrap" />
                 </label>
                 <label>
                   Tell us about your project *
-                  <textarea
-                    name="message"
-                    rows={4}
-                    placeholder="Share your idea, size, materials, deadline, or anything else that will help us understand..."
-                    required
-                  />
+                  <textarea name="message" required rows={4} placeholder="Size, materials, deadlines, questions..." />
                 </label>
-                <button type="submit" className={styles.submit}>
-                  Send your enquiry <Send size={15} />
-                </button>
-                <p className={styles.disclaimer}>
-                  This opens your email app. Your enquiry is not sent automatically.
-                </p>
-              </form>
-            </>
+              </div>
+
+              <button type="submit" className={styles.submit}>
+                <span>Send enquiry</span>
+                <Send size={16} />
+              </button>
+            </form>
           )}
         </div>
       </div>

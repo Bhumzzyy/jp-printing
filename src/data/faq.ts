@@ -1,37 +1,37 @@
-export const faq = [
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export const faq: FaqItem[] = [
   {
-    question: "What printing services do you offer?",
+    question: "What file formats do you accept for print and signage production?",
     answer:
-      "We offer a full range of printing services including business cards & stationery, flyers, brochures & post cards, take-out & laminated menus, calendars, stickers & labels, presentation folders, NCR forms & envelopes, event tickets & bookmarks, booklets & notepads, door hangers & car magnets, lawn signs & feather flags, and greeting & invitation cards.",
+      "We accept print-ready vector and high-resolution files including PDF, AI (Adobe Illustrator), EPS, and high-resolution TIFF or PNG (300 DPI at 100% scale for print, 150 DPI at full scale for large-format signs). For best results, design in CMYK color mode, convert text fonts to outlines/curves, and include a standard 0.125\" (1/8 inch) bleed around the perimeter.",
   },
   {
-    question: "What signage services do you provide?",
+    question: "Can I request custom sizes and dimensions not listed on the site?",
     answer:
-      "Our signage range covers window graphics, wall graphics & murals, vinyl lettering, custom banners, custom signs, exterior signage, interior decor signs, pop-up signs & banners, LED displays, channel letters, PVC & acrylic signs, and vehicle decals & car wraps. If you can imagine it, we can usually make it.",
+      "Yes, absolutely. Every project can be produced to your exact architectural or promotional dimensions. Whether you need a non-standard storefront fascia sign, an irregular custom table wrap, or custom-dimensioned banners, we fabricate directly to your specified measurements. Share your required width and height in your quote request.",
   },
   {
-    question: "Can I request a custom print or sign order?",
+    question: "Do you provide design assistance or file preparation support?",
     answer:
-      "Absolutely. Share your idea, preferred size, quantity and any design details with us. We work with custom shapes, sizes and materials every day, and we'll help you choose the right options for your project and budget.",
+      "Yes. If you already have existing artwork, logos, or brand guidelines, our team will review your files free of charge to confirm bleed, resolution, and safe margins prior to production. If you need complete design support from scratch, we collaborate closely with you to produce clean, professional layouts tailored for print and signage.",
   },
   {
-    question: "Can I provide my own design?",
+    question: "How do I request a quote for my project?",
     answer:
-      "Yes. You're welcome to send us your existing artwork or print-ready files. We can also review your design and advise on sizing, bleed and resolution. If you don't have artwork, our team can help create something for you.",
+      "You can submit an inquiry through our online quote form on the Contact page, email us directly at jpprint13@gmail.com, or call us at 905 919 1181. Please specify the product or service, desired quantity, estimated dimensions, and preferred paper stock or signage substrate. All quotes are free and provide clear, no-obligation pricing.",
   },
   {
-    question: "How do I get a quote?",
+    question: "What printing finishes and paper stocks are available?",
     answer:
-      "Use our contact page, email jpprint13@gmail.com, or call 905 919 1181. Include the product, quantity, size and any finishing requirements so we can give you an accurate price. Quotes are free and no-obligation.",
+      "We offer a broad selection of premium finishes suited to every corporate aesthetic. Options include velvety silk lamination, glare-free matte aqueous coating, high-gloss UV protective coat, tactile classic woven linen, 14pt natural cotton uncoated, magnetic backing, and rigid waterproof plastic. For signage, we offer gloss, matte, anti-glare, and anti-graffiti overlaminates.",
   },
   {
-    question: "How long will my order take?",
+    question: "Do you offer professional signage and vinyl installation in Ontario?",
     answer:
-      "Turnaround depends on the product, quantity and finishing. Many standard print items are ready within a few business days, while custom signage and installation may take longer. Contact us with your details and we'll confirm a timeline.",
-  },
-  {
-    question: "Do you offer installation for signs?",
-    answer:
-      "Yes. For larger signage, wall graphics, window wraps and vehicle wraps, we offer professional measurement and installation so everything fits perfectly and looks the part.",
+      "Yes. For commercial storefront signage, large window graphics, wall murals, architectural table wraps, and vehicle fleet decals, our experienced installation team provides on-site measurement and professional application throughout Ontario. We ensure surface preparation, precise bubble-free alignment, and durable edge seals.",
   },
 ];

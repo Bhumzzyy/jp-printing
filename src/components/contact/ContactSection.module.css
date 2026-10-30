@@ -1,0 +1,325 @@
+/* ==========================================================================
+   CONTACT PAGE STYLES — TWO-COLUMN EDITORIAL LAYOUT
+   ========================================================================== */
+
+.pageWrap {
+  padding: 60px 0 90px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 90px;
+}
+
+/* Left Column: Verified Business Information */
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  color: var(--foreground);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.contactCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.contactCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.contactCard:hover {
+  border-color: #D3CFCA;
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-small);
+  background-color: var(--surface-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--foreground);
+}
+
+.cardLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.cardValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.cardValue:hover {
+  color: var(--brand-magenta);
+}
+
+.cardSubtext {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.serviceBadge {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  padding: 20px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Right Column: Quote Form */
+.formCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.formHeader {
+  margin-bottom: 28px;
+}
+
+.formTitle {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--foreground);
+  margin-bottom: 8px;
+}
+
+.formSubtitle {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rowTwo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.required {
+  color: var(--brand-magenta);
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  font-size: 14px;
+  color: var(--foreground);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 3px rgba(37, 42, 45, 0.08);
+}
+
+.textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.fallbackNotice {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.successState {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--surface-muted);
+  color: var(--brand-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.successTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.successText {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+/* FAQ Accordion Section */
+.faqSection {
+  padding-top: 60px;
+  border-top: 1px solid var(--border);
+}
+
+.faqHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.faqTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 12px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.faqCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  overflow: hidden;
+}
+
+.faqTrigger {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--foreground);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.faqTrigger:hover {
+  color: var(--brand-magenta);
+}
+
+.faqChevron {
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+.faqChevronOpen {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  border-top: 1px solid var(--border-light);
+  padding-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .formCard {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .rowTwo {
+    grid-template-columns: 1fr;
+  }
+
+  .formCard {
+    padding: 20px;
+  }
+}
+

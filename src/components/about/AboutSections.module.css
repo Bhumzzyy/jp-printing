@@ -1,0 +1,344 @@
+/* ==========================================================================
+   ABOUT PAGE STYLES — EDITORIAL STUDIO LAYOUT
+   ========================================================================== */
+
+.aboutHero {
+  position: relative;
+  min-height: calc(85vh - 90px);
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  background-color: #121719;
+  overflow: hidden;
+}
+
+.aboutHeroImgWrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.aboutHeroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.aboutHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(18, 23, 25, 0.88) 0%,
+    rgba(18, 23, 25, 0.72) 30%,
+    rgba(18, 23, 25, 0.38) 55%,
+    rgba(18, 23, 25, 0.08) 78%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.aboutHeroContent {
+  position: relative;
+  z-index: 3;
+  max-width: 780px;
+  padding: 80px 0;
+  color: #FFFFFF;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.aboutEyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #00C5E8;
+  margin-bottom: 18px;
+}
+
+.aboutHeroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.aboutHeroDesc {
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.65;
+  color: #FFFFFF;
+  max-width: 680px;
+}
+
+/* Two-Column Story Section */
+.storySection {
+  padding: 90px 0;
+}
+
+.twoColGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.colImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background-color: var(--surface-muted);
+}
+
+.colImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyContent h2 {
+  margin-bottom: 20px;
+}
+
+.storyContent p {
+  margin-bottom: 18px;
+  color: #4A4E51;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Facility Section */
+.facilitySection {
+  padding: 90px 0;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.facilityGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.capabilityList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.capabilityItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--foreground);
+}
+
+.checkIcon {
+  color: var(--brand-cyan);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Values Section */
+.valuesSection {
+  padding: 90px 0;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.valueCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.valueNumber {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--brand-magenta);
+  margin-bottom: 12px;
+}
+
+.valueTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--foreground);
+  margin-bottom: 8px;
+}
+
+.valueDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* How We Work Process */
+.processSection {
+  padding: 90px 0;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.processCard {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.processStep {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-cyan);
+  margin-bottom: 8px;
+}
+
+.processTitle {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--foreground);
+  margin-bottom: 8px;
+}
+
+.processDesc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Services Shortcut Section */
+.servicesShortcut {
+  padding: 90px 0;
+}
+
+.shortcutGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.shortcutCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  overflow: hidden;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.shortcutCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.shortcutImgWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--surface-muted);
+}
+
+.shortcutImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.shortcutCard:hover .shortcutImg {
+  transform: scale(1.04);
+}
+
+.shortcutTitle {
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .twoColGrid, .facilityGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shortcutGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .aboutHeroOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 23, 25, 0.82) 0%,
+      rgba(18, 23, 25, 0.94) 55%,
+      rgba(18, 23, 25, 0.98) 100%
+    );
+  }
+
+  .aboutHeroContent {
+    padding: 50px 0;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .shortcutGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

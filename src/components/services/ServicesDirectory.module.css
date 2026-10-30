@@ -1,0 +1,272 @@
+/* ==========================================================================
+   SERVICES DIRECTORY & OVERVIEW STYLES
+   ========================================================================== */
+
+.pageHero {
+  padding: 60px 0 40px;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  color: var(--foreground);
+  margin-bottom: 16px;
+}
+
+.heroLead {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Search and Filters Bar */
+.filterBar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.searchWrap {
+  position: relative;
+  max-width: 460px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  font-size: 14px;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--foreground);
+  box-shadow: 0 0 0 3px rgba(37, 42, 45, 0.08);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+}
+
+.filterTabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filterTab {
+  padding: 8px 16px;
+  border-radius: var(--radius-small);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterTab:hover {
+  background-color: var(--surface-muted);
+  color: var(--foreground);
+  border-color: #D3CFCA;
+}
+
+.activeTab {
+  background-color: var(--foreground);
+  color: #FFFFFF;
+  border-color: var(--foreground);
+}
+
+.activeTab:hover {
+  background-color: #111416;
+  color: #FFFFFF;
+}
+
+/* Category Grid */
+.categoriesSection {
+  padding: 60px 0 90px;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.categoryCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cardHeroImageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--surface-muted);
+}
+
+.cardHeroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.categoryCard:hover .cardHeroImg {
+  transform: scale(1.03);
+}
+
+.cardBody {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--foreground);
+  margin-bottom: 8px;
+}
+
+.cardTagline {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--brand-magenta);
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* Subcategories Pills */
+.subcategoriesWrap {
+  border-top: 1px solid var(--border-light);
+  padding-top: 18px;
+  margin-bottom: 20px;
+}
+
+.subcatLabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-light);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.subcatPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.subcatPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.subcatPill:hover {
+  background-color: var(--surface-muted);
+  border-color: var(--foreground);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-light);
+  padding-top: 18px;
+}
+
+.exploreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.categoryCard:hover .exploreLink {
+  color: var(--brand-cyan);
+  gap: 10px;
+}
+
+/* Empty Search Results */
+.noResults {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+}
+
+.noResultsTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.noResultsText {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardBody {
+    padding: 20px;
+  }
+}
+

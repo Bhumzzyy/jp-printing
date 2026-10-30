@@ -1,15 +1,13 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ContactHero from "@/components/contact/ContactHero";
-import ContactMethods from "@/components/contact/ContactMethods";
-import ContactFaq from "@/components/contact/ContactFaq";
-import ContactInquiry from "@/components/contact/ContactInquiry";
+import ContactFormInteractive from "@/components/contact/ContactFormInteractive";
 
 export const metadata: Metadata = {
-  title: "Contact JP Printing & Signs | Let's Make It Print",
+  title: "Contact & Quote Request | JP Printing & Signs | Ontario, Canada",
   description:
-    "Have a printing, signage, or custom graphics project in mind? Contact JP Printing & Signs to explore the right options for your business.",
+    "Request a free quote or consult with JP Printing & Signs in Ontario. Direct telephone: 905 919 1181. Email: jpprint13@gmail.com. We specialize in custom printing, signage, and installation.",
 };
 
 export default function ContactPage() {
@@ -17,11 +15,9 @@ export default function ContactPage() {
     <>
       <Navbar />
       <main>
-        <ContactHero />
-        <ContactFaq />
-        <ContactMethods />
-        
-        <ContactInquiry />
+        <Suspense fallback={<div className="container" style={{ padding: "80px 0", textAlign: "center" }}>Loading contact portal...</div>}>
+          <ContactFormInteractive />
+        </Suspense>
       </main>
       <Footer />
     </>
